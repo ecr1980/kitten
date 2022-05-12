@@ -6,4 +6,5 @@ Hi there, <%= @kitty.name %>!<br><br>
 <br>
 <br>
 Edit kitty?<br>
-<%= render "form", kitty: @kitty %>
+<%= render "form", kitty: @kitty %><br><br>
+<%= button_to "Delete Kitty", kitty_path(@kitty), :method => :delete %>

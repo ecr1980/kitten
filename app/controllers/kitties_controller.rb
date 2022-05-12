@@ -16,7 +16,9 @@ class KittiesController < ApplicationController
     @kitty = Kitty.new(kitty_params)
 
     if @kitty.save
-      redirect_to kitty_path(@kitty)
+      redirect_to kitty_path(@kitty), notice: "Happy day, your kitten has been added!"
+    else
+      redirect_to new_kity_path, notice: "How did you mess this form up? Try again."
     end
   end
 
@@ -26,8 +28,16 @@ class KittiesController < ApplicationController
   def update
     @kitty = Kitty.find(params[:id])
     if @kitty.update(kitty_params)
-      redirect_to kitty_path
+      redirect_to kitty_path, notice: "Your kitty cat has been updated."
+    else
+      redirect_to kity_path, notice: "How did you mess this form up? Try again"
     end
+  end
+
+  def destroy
+    @kitty = Kitty.find(params[:id])
+    @kitty.destroy
+    redirect_to root_path, notice: "Aw, you killed the cat. :("
   end
 
   private

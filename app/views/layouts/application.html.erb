@@ -12,6 +12,8 @@
 
   <body>
     <%= link_to "View the list of kittens", root_path %>  <%= link_to "Add a kitten", new_kitty_path %><br><br>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
