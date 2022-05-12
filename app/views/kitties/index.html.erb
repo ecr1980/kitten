@@ -1,0 +1,6 @@
+Welcome to Kitty Creator!<br>
+<ul>
+<% @kitties.each do |kitty| %>
+  <li><%= kitty.name %> <%= link_to "See kitten", kitty_path(kitty) %></li>
+<% end %>
+</ul>

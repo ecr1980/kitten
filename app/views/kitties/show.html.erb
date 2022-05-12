@@ -1,0 +1,9 @@
+Hi there, <%= @kitty.name %>!<br><br>
+
+<%= @kitty.name %> is <%= @kitty.age %> years old.<br>
+<%= @kitty.name %> has a cuteness of <%= @kitty.cuteness %> and a softness of <%= @kitty.softness %>.
+<br>
+<br>
+<br>
+Edit kitty?<br>
+<%= render "form", kitty: @kitty %>
